@@ -13,7 +13,8 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      // 'pages/my/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -22,10 +23,17 @@ class App extends Component {
       navigationBarTextStyle: 'black'
     }
   }
+   
+  componentWillMount (){
+     console.log('willapp')
+  }
+  componentDidMount () {
+    console.log('didapp')
+  }
 
-  componentDidMount () {}
-
-  componentDidShow () {}
+  componentDidShow () {
+    console.log('showapp')
+  }
 
   componentDidHide () {}
 

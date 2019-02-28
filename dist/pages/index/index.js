@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -10,7 +10,7 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 var _class, _temp2;
 
-var _index = require('../../npm/@tarojs/taro-weapp/index.js');
+var _index = require("../../npm/@tarojs/taro-weapp/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -21,6 +21,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import { View, Text } from '@tarojs/components'
 
 var Index = (_temp2 = _class = function (_BaseComponent) {
   _inherits(Index, _BaseComponent);
@@ -36,33 +38,56 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = [], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["isToggleOn"], _this.config = {
       navigationBarTitleText: '首页'
+    }, _this.onChangeName = function () {
+      console.log(1210);
+
+      //  this.setState({
+      //      name:'thyile'
+      //  })
+    }, _this.onClick = function (e) {
+      e.stopPropagation();
+      console.log(1212);
+      _this.setState(function (prevState) {
+        return {
+          isToggleOn: !prevState.isToggleOn
+        };
+      });
     }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
-    key: '_constructor',
+    key: "_constructor",
     value: function _constructor(props) {
-      _get(Index.prototype.__proto__ || Object.getPrototypeOf(Index.prototype), '_constructor', this).call(this, props);
+      _get(Index.prototype.__proto__ || Object.getPrototypeOf(Index.prototype), "_constructor", this).call(this, props);
+      this.state = { isToggleOn: true };
     }
   }, {
-    key: 'componentWillMount',
-    value: function componentWillMount() {}
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      console.log('willpage');
+    }
   }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {}
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      console.log('didpage');
+    }
   }, {
-    key: 'componentWillUnmount',
+    key: "componentWillUnmount",
     value: function componentWillUnmount() {}
   }, {
-    key: 'componentDidShow',
-    value: function componentDidShow() {}
+    key: "componentDidShow",
+    value: function componentDidShow() {
+      console.log('showpage');
+    }
   }, {
-    key: 'componentDidHide',
-    value: function componentDidHide() {}
+    key: "componentDidHide",
+    value: function componentDidHide() {
+      console.log('hidepage');
+    }
   }, {
-    key: '_createData',
+    key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
@@ -74,7 +99,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
   }]);
 
   return Index;
-}(_index.Component), _class.properties = {}, _class.$$events = [], _temp2);
+}(_index.Component), _class.properties = {}, _class.$$events = ["onClick"], _temp2);
 exports.default = Index;
 
 Component(require('../../npm/@tarojs/taro-weapp/index.js').default.createComponent(Index, true));

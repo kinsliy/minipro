@@ -1,28 +1,66 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
-import './index.less'
+// import { View, Text } from '@tarojs/components'
+import './index.less';
 
 export default class Index extends Component {
+
+  constructor (props) {
+    super(props)
+    this.state = {isToggleOn: true}
+  }
 
   config = {
     navigationBarTitleText: '首页'
   }
 
-  componentWillMount () { }
+ 
 
-  componentDidMount () { }
+  componentWillMount () {
+     console.log('willpage')
+   }
+
+  componentDidMount () { 
+    console.log('didpage')
+  }
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentDidShow () { 
+    console.log('showpage')
+  }
 
-  componentDidHide () { }
+  componentDidHide () {
+    console.log('hidepage')
+   }
+
+   
+  onChangeName=()=>{
+      console.log(1210)
+    
+      //  this.setState({
+      //      name:'thyile'
+      //  })
+   }
+
+   
+
+  onClick = (e) => {
+    e.stopPropagation()
+    console.log(1212)
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }))
+  }
+
 
   render () {
     return (
-      <View className='index'>
-        <Text>Hello world121!</Text>
-      </View>
+      <view className='index'>
+       
+       <button onClick={this.onClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+       </view>
     )
   }
 }

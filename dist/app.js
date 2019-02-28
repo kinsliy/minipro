@@ -50,11 +50,20 @@ var _App = function (_BaseComponent) {
   }
 
   _createClass(_App, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      console.log('willapp');
+    }
+  }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      console.log('didapp');
+    }
   }, {
     key: 'componentDidShow',
-    value: function componentDidShow() {}
+    value: function componentDidShow() {
+      console.log('showapp');
+    }
   }, {
     key: 'componentDidHide',
     value: function componentDidHide() {}
