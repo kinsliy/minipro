@@ -189,7 +189,7 @@
         this.$invoke('counter2', 'minus', 45, 6)
         this.$invoke('counter1', 'plus', 45, 6)
 
-        this.$broadcast('index-broadcast', 1, 3, 4)
+       // this.$broadcast('index-broadcast', 1, 3, 4)
       },
       request () {
         let self = this
@@ -211,12 +211,12 @@
       }
     }
 
-    events = {
-      'index-emit': (...args) => {
-        let $event = args[args.length - 1]
-        console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`)
-      }
-    }
+    // events = {
+    //   'index-emit': (...args) => {
+    //     let $event = args[args.length - 1]
+    //     console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`)
+    //   }
+    // }
 
     onLoad() {
       let self = this
