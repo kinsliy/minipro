@@ -1,5 +1,0 @@
-<block>
-    <view className="index" __triggerObserer="{{ _triggerObserer }}">
-        <button bindonclick="onClick" __triggerObserer="{{ _triggerObserer }}" __fn_onClick="{{true}}">{{isToggleOn ? 'ON' : 'OFF'}}</button>
-    </view>
-</block>
