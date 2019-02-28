@@ -1,2 +1,2 @@
 # minipro
-小程序 wepy
+小程序
